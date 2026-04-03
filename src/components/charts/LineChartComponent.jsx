@@ -28,7 +28,7 @@ export default function LineChartComponent() {
               borderRadius: "8px",
               fontSize: "13px",
             }}
-            formatter={(value) => [`₹${value.toLocaleString()}`, "Balance"]}
+            formatter={(value) => [`Rs. ${value.toLocaleString()}`, "Balance"]}
           />
           <Line
             type="monotone"
