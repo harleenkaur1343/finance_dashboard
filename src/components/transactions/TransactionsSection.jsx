@@ -11,6 +11,42 @@ export default function TransactionsSection() {
   const openModal = useFinanceStore((s) => s.openModal);
   const role = useFinanceStore((s) => s.role);
 
+  const exportToJSON = (data) => {
+    const blob = new Blob([JSON.stringify(data, null, 2)], {
+      type: "application/json",
+    });
+
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "transactions.json";
+    a.click();
+
+    URL.revokeObjectURL(url);
+  };
+
+  const exportToCSV = (data) => {
+    const headers = ["Date", "Category", "Amount", "Type"];
+
+    const rows = data.map((tx) => [tx.date, tx.category, tx.amount, tx.type]);
+
+    const csvContent = [headers, ...rows]
+      .map((row) => row.join(","))
+      .join("\n");
+
+    const blob = new Blob([csvContent], { type: "text/csv" });
+
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "transactions.csv";
+    a.click();
+
+    URL.revokeObjectURL(url);
+  };
+
   const filteredData = transactions.filter((tx) => {
     const matchesSearch = tx.category
       .toLowerCase()
@@ -30,14 +66,30 @@ export default function TransactionsSection() {
         <h2 className="text-lg font-semibold mb-[var(--space-3)]">
           Transactions
         </h2>
-        {role === "admin" && (
+
+        <div className="flex gap-2 mb-4">
           <button
-            onClick={() => openModal()}
-            className="mb-4 bg-[hsl(var(--color-accent))] text-white px-4 py-2 rounded-lg text-sm"
+            onClick={() => exportToCSV(filteredData)}
+            className="px-3 py-2 text-sm text-[hsl(var(--color-accent))] rounded-lg border border-[hsl(var(--color-accent))] cursor-pointer hover:shadow-md"
           >
-            + Add
+            Export CSV
           </button>
-        )}
+
+          <button
+            onClick={() => exportToJSON(filteredData)}
+            className="px-3 py-2 text-sm text-[hsl(var(--color-accent))] rounded-lg border border-[hsl(var(--color-accent))] cursor-pointer hover:shadow-md"
+          >
+            Export JSON
+          </button>
+          {role === "admin" && (
+            <button
+              onClick={() => openModal()}
+              className="bg-[hsl(var(--color-accent))] text-white px-3 py-2 rounded-lg text-sm cursor-pointer hover:shadow-lg"
+            >
+              + Add
+            </button>
+          )}
+        </div>
       </div>
 
       <TransactionFilters
