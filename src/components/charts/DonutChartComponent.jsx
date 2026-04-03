@@ -28,7 +28,7 @@ export default function DonutChartComponent() {
               borderRadius: "8px",
               fontSize: "13px",
             }}
-            formatter={(value) => [`₹${value.toLocaleString()}`, ""]}
+            formatter={(value) => [`Rs. ${value.toLocaleString()}`, "Amount"]}
           />
           <Legend
             iconType="circle"
