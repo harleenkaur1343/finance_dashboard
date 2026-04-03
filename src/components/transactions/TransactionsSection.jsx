@@ -70,23 +70,23 @@ export default function TransactionsSection() {
         <div className="flex gap-2 mb-4">
           <button
             onClick={() => exportToCSV(filteredData)}
-            className="px-3 py-2 text-sm text-[hsl(var(--color-accent))] rounded-lg border border-[hsl(var(--color-accent))] cursor-pointer hover:shadow-md"
+            className="md:px-3 md:py-2 md:text-sm text-[hsl(var(--color-accent))] rounded-lg border border-[hsl(var(--color-accent))] cursor-pointer hover:shadow-md sm: border-none sm: underline sm: px-1 sm: text-[0.8rem]"
           >
-            Export CSV
+            CSV
           </button>
 
           <button
             onClick={() => exportToJSON(filteredData)}
-            className="px-3 py-2 text-sm text-[hsl(var(--color-accent))] rounded-lg border border-[hsl(var(--color-accent))] cursor-pointer hover:shadow-md"
+            className="md:px-3 py-2 md:text-sm text-[hsl(var(--color-accent))] rounded-lg border border-[hsl(var(--color-accent))] cursor-pointer hover:shadow-md sm: border-none sm: underline sm: px-1 sm: text-[0.8rem]"
           >
-            Export JSON
+            JSON
           </button>
           {role === "admin" && (
             <button
               onClick={() => openModal()}
-              className="bg-[hsl(var(--color-accent))] text-white px-3 py-2 rounded-lg text-sm cursor-pointer hover:shadow-lg"
+              className="bg-[hsl(var(--color-accent))] text-white px-3 py-2 rounded-lg text-sm cursor-pointer hover:shadow-lg sm:text-xs sm: text-[0.8rem]"
             >
-              + Add
+              Add
             </button>
           )}
         </div>
