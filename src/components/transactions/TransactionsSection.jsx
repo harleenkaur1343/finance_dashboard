@@ -70,21 +70,29 @@ export default function TransactionsSection() {
         <div className="flex gap-2 mb-4">
           <button
             onClick={() => exportToCSV(filteredData)}
-            className="md:px-3 md:py-2 md:text-sm text-[hsl(var(--color-accent))] rounded-lg border border-[hsl(var(--color-accent))] cursor-pointer hover:shadow-md sm: border-none sm: underline sm: px-1 sm: text-[0.8rem]"
+            className="cursor-pointer text-[hsl(var(--color-accent))] hover:shadow-md
+  underline sm:underline md:no-underline
+  md:border md:border-solid md:border-[hsl(var(--color-accent))]
+  md:px-3 md:py-2 md:text-sm md:rounded-lg
+  px-1 text-[0.8rem]"
           >
             CSV
           </button>
 
           <button
             onClick={() => exportToJSON(filteredData)}
-            className="md:px-3 py-2 md:text-sm text-[hsl(var(--color-accent))] rounded-lg border border-[hsl(var(--color-accent))] cursor-pointer hover:shadow-md sm: border-none sm: underline sm: px-1 sm: text-[0.8rem]"
+            className="cursor-pointer text-[hsl(var(--color-accent))] hover:shadow-md
+  underline sm:underline md:no-underline
+  md:border md:border-solid md:border-[hsl(var(--color-accent))]
+  md:px-3 md:py-2 md:text-sm md:rounded-lg
+  px-1 text-[0.8rem]"
           >
             JSON
           </button>
           {role === "admin" && (
             <button
               onClick={() => openModal()}
-              className="bg-[hsl(var(--color-accent))] text-white px-3 py-2 rounded-lg text-sm cursor-pointer hover:shadow-lg sm:text-xs sm: text-[0.8rem]"
+              className="bg-[hsl(var(--color-accent))] md:text-sm text-white px-3 py-2 rounded-lg text-sm cursor-pointer hover:shadow-lg sm:text-xs sm: text-[0.8rem]"
             >
               Add
             </button>
