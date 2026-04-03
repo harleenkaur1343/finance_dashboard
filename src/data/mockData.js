@@ -1,0 +1,110 @@
+export const balanceData = [
+  { name: "Jan", balance: 20000 },
+  { name: "Feb", balance: 25000 },
+  { name: "Mar", balance: 22000 },
+  { name: "Apr", balance: 30000 },
+  { name: "May", balance: 28000 },
+];
+
+export const expenseData = [
+  { name: "Food", value: 8000, fill: "#51538E" },
+  { name: "Travel", value: 8000, fill: "#BDC0FC" },
+  { name: "Rent", value: 13000, fill: "#9094FC" },
+  { name: "Shopping", value:3000, fill: "#4D51C9" },
+];
+
+export const transactions = [
+  { id: 1, date: "2026-04-01", category: "Food", amount: 500, type: "expense" },
+  {
+    id: 2,
+    date: "2026-04-02",
+    category: "Salary",
+    amount: 50000,
+    type: "income",
+  },
+  {
+    id: 3,
+    date: "2026-04-03",
+    category: "Shopping",
+    amount: 2000,
+    type: "expense",
+  },
+  {
+    id: 4,
+    date: "2026-04-04",
+    category: "Rent",
+    amount: 15000,
+    type: "expense",
+  },
+  {
+    id: 5,
+    date: "2026-04-05",
+    category: "Freelance",
+    amount: 8000,
+    type: "income",
+  },
+  { id: 6, date: "2026-04-06", category: "Food", amount: 700, type: "expense" },
+  {
+    id: 7,
+    date: "2026-04-07",
+    category: "Travel",
+    amount: 3000,
+    type: "expense",
+  },
+  {
+    id: 8,
+    date: "2026-04-08",
+    category: "Shopping",
+    amount: 1500,
+    type: "expense",
+  },
+  {
+    id: 9,
+    date: "2026-04-09",
+    category: "Salary",
+    amount: 50000,
+    type: "income",
+  },
+  {
+    id: 10,
+    date: "2026-04-10",
+    category: "Food",
+    amount: 600,
+    type: "expense",
+  },
+  {
+    id: 11,
+    date: "2026-04-11",
+    category: "Bills",
+    amount: 2500,
+    type: "expense",
+  },
+  {
+    id: 12,
+    date: "2026-04-12",
+    category: "Freelance",
+    amount: 6000,
+    type: "income",
+  },
+  {
+    id: 13,
+    date: "2026-04-13",
+    category: "Entertainment",
+    amount: 1200,
+    type: "expense",
+  },
+  {
+    id: 14,
+    date: "2026-04-14",
+    category: "Food",
+    amount: 450,
+    type: "expense",
+  },
+  {
+    id: 15,
+    date: "2026-04-15",
+    category: "Travel",
+    amount: 4000,
+    type: "expense",
+  },
+];
