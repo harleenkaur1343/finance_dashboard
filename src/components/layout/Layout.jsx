@@ -5,6 +5,7 @@ import Sidebar from "./Sidebar";
 import { useState } from "react";
 import TransactionsSection from "../transactions/TransactionsSection";
 import InsightsSection from "../insights/InsightsSection";
+import TransactionModal from "../transactions/TransactionModal";import Footer from "./Footer";
 
 export default function Layout() {
   const [role, setRole] = useState("viewer");
@@ -21,10 +22,11 @@ export default function Layout() {
           <ChartsSection />
           <TransactionsSection role={role} />
           <InsightsSection />
+          <Footer/>
         </main>
         <TransactionModal />
       </div>
     </div>
   );
 }
-import TransactionModal from "../transactions/TransactionModal";
+
