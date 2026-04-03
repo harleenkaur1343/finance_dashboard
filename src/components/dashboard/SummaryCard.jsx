@@ -1,6 +1,11 @@
+import { motion } from "framer-motion";
+
 export default function SummaryCard({ title, amount, icon, type }) {
-  return (
-    <div className="bg-[hsl(var(--color-card))] border border-[hsl(var(--color-border))] rounded-xl shadow-md p-[var(--space-4)] flex items-center justify-between">
+   return (
+    <motion.div
+      whileHover="hover"
+      className="bg-[hsl(var(--color-card))] border border-[hsl(var(--color-border))] rounded-xl shadow-md p-[var(--space-4)] flex items-center justify-between cursor-default"
+    >
       <div>
         <p className="text-sm text-[hsl(var(--color-muted))]">{title}</p>
         <h2 className="text-2xl font-semibold mt-[var(--space-2)]">
@@ -8,7 +13,12 @@ export default function SummaryCard({ title, amount, icon, type }) {
         </h2>
       </div>
 
-      <div
+      <motion.div
+        variants={{
+          hover: { scale: 1.1},
+        }}
+        style={{transitionDuration:"0.1s"}}
+        transition={{ type: "spring", stiffness: 300, damping: 15 }}
         className={`p-[var(--space-3)] rounded-lg ${
           type === "income"
             ? "bg-[hsl(var(--color-income)/0.1)] text-[hsl(var(--color-income))]"
@@ -18,7 +28,7 @@ export default function SummaryCard({ title, amount, icon, type }) {
         }`}
       >
         {icon}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
