@@ -13,7 +13,7 @@ export default function Layout() {
     <div className="flex min-h-screen">
       <Sidebar />
 
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col min-w-0">
         <Header role={role} setRole={setRole} />
 
         <main className="p-6">
