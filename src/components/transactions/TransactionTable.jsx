@@ -5,6 +5,8 @@ export default function TransactionTable({ data, role }) {
   const openModal = useFinanceStore((s) => s.openModal);
   const deleteTransaction = useFinanceStore((s) => s.deleteTransaction);
 
+  
+
   const handleDelete = (id) => {
     const confirmDelete = window.confirm(
       "Are you sure you want to delete this transaction?"
@@ -15,8 +17,8 @@ export default function TransactionTable({ data, role }) {
     }
   };
   return (
-    <div className="overflow-x-auto h-[18rem]">
-      <table className="w-full text-sm">
+    <div className="overflow-x-auto overflow-y-auto h-[18rem]">
+      <table className="w-full text-sm min-w-[500px]">
         <thead>
           <tr className="text-left border-b border-[hsl(var(--color-border))]">
             <th className="py-2">Date</th>
@@ -32,7 +34,7 @@ export default function TransactionTable({ data, role }) {
             <tr>
               <td
                 colSpan="5"
-                className="text-center py-4 text-[hsl(var(--color-muted))]"
+                className="text-center py-4 px-2 text-[hsl(var(--color-muted))]"
               >
                 No transactions found
               </td>
